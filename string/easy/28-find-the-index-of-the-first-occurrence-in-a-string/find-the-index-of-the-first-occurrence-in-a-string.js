@@ -15,7 +15,6 @@ var strStr = function (haystack, needle) {
         // If characters match, move to the next character in both needle and haystack
         if (needle[needleIndex] === haystack[i]) {
             needleIndex++;
-
             // If all characters in needle are found in sequence, return the starting index
             if (needleIndex === needle.length) {
                 return i - needle.length + 1;
