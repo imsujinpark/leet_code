@@ -3,7 +3,7 @@
  * @param {string} needle
  * @return {number}
  */
-var strStr = function(haystack, needle) {
+var strStr = function (haystack, needle) {
     // needle length cannot be bigger than haystack length 
     if (needle.length > haystack.length) {
         return -1;
