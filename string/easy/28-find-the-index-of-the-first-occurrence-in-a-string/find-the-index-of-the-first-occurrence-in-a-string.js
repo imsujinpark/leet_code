@@ -11,6 +11,7 @@ var strStr = function(haystack, needle) {
     let needleIndex = 0;
 
     for (let i = 0; i <= haystack.length; i++) {
+
         if (needle[needleIndex] === haystack[i]) {
             needleIndex++;
 
@@ -22,6 +23,7 @@ var strStr = function(haystack, needle) {
             i -= needleIndex;
             needleIndex = 0;
         }
+        
     }
 
     return -1;
