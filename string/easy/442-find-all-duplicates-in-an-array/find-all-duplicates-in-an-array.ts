@@ -5,8 +5,8 @@ function findDuplicates(nums: number[]): number[] {
     for(let i = 0; i < nums.length; i++) {
         if (numSet.has(nums[i])) {
             number.push(nums[i]);
+            continue;
         }
-
         numSet.add(nums[i]);
     }
 
