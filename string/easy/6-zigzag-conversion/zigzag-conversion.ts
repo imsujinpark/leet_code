@@ -3,30 +3,23 @@ function convert(s: string, numRows: number): string {
         return s;
     }
 
-    const stringMap: Map<number, string> = new Map();
+    // this is an array where I will sort the string for each row by index
+    const stringsByRow = new Array(numRows).fill('');
 
     let rowIndex = 0;
-    let direction = 1;
+    let ascending = true; // this will increment or decrement row Index.
 
     for (let i = 0; i < s.length; i++) {
-        let currentStringForRow = stringMap.get(rowIndex) ?? '';
-        currentStringForRow = currentStringForRow.concat(s[i]);
-        stringMap.set(rowIndex, currentStringForRow);
+        stringsByRow[rowIndex] += s[i];
 
         if (rowIndex === 0) {
-            direction = 1;
+            ascending = true;
         } else if (rowIndex === numRows - 1) {
-            direction = -1;
+            ascending = false;
         }
 
-        rowIndex += direction;
+        rowIndex += ascending ? 1 : -1;
     }
 
-    let concatenatedString = "";
-
-    stringMap.forEach(value => {
-        concatenatedString += value;
-    })
-
-    return concatenatedString;
+    return stringsByRow.join('');
 };
