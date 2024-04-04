@@ -17,8 +17,8 @@ function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     if (!p && !q) return true;
     // if only one of p or q is null, they are not the same
     if (!p || !q) return false;
+    // if p and q's root don't match, they are not the same
+    if (p.val !== q.val) return false;
 
-    return p?.val === q?.val
-        && isSameTree(p?.left, q?.left)
-        && isSameTree(p?.right, q?.right);
+    return isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right);
 };
