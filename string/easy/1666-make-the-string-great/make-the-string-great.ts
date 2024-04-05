@@ -17,6 +17,7 @@ function makeGood(s: string): string {
         if (badCharStartingIndex !== null) {
             s = s.substring(0, badCharStartingIndex) + s.substring(badCharStartingIndex + 2);
 
+            // untill there is no bad char, iterate
             return removeBadStrings(s);
         }
 
