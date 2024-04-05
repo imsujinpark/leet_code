@@ -2,6 +2,7 @@ function makeGood(s: string): string {
     let i = 0;
 
     while (i < s.length && s[i + 1]) {
+        // check if i and i+1 chars are same char on diff case
         if (Math.abs(s.charCodeAt(i) - s.charCodeAt(i+1)) === 32) {
             s = s.substring(0, i) + s.substring(i + 2);
 
