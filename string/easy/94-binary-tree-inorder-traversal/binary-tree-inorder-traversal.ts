@@ -13,7 +13,17 @@
  */
 
 function inorderTraversal(root: TreeNode | null): number[] {
-    if (!root) return [];
+    const result = [];
 
-    return [...inorderTraversal(root.left), root.val, ...inorderTraversal(root.right)]
+    function traverse(root: TreeNode | null): number[] {
+        if (root) {
+            traverse(root.left);
+            result.push(root.val);
+            traverse(root.right);
+        }
+
+        return result;
+    }
+    
+    return traverse(root);
 };
